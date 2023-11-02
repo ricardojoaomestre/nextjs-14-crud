@@ -6,7 +6,7 @@ const Posts = async () => {
     (response) => response.json()
   );
   return (
-    <section className="section px-8">
+    <section className="section">
       <h2 className="text-xl font-semibold mb-4">Posts</h2>
       <ul className="flex flex-col gap-4">
         {posts.map((post) => (
