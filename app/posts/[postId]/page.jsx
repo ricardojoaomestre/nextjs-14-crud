@@ -7,7 +7,7 @@ const Post = async ({ params }) => {
   ).then((response) => response.json());
   return (
     <div>
-      <h2 className="text-xl font-semibold capitalize mb-8">{post.title}</h2>
+      <h2 className="title mb-8">{post.title}</h2>
       <p>{post.body}</p>
     </div>
   );

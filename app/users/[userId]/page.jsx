@@ -10,9 +10,7 @@ const User = async ({ params }) => {
     <div className="flex flex-row gap-8 items-center">
       <ProfilePicture user={user} />
       <div>
-        <h2 className="text-3xl font-semibold capitalize">
-          {user.name || user.email}
-        </h2>
+        <h2 className="title">{user.name || user.email}</h2>
         <a href={`mailto:${user?.email}`}>{user.email}</a>
       </div>
     </div>
