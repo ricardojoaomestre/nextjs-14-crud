@@ -6,7 +6,10 @@ const Users = async () => {
   const { users } = await getUsers();
   return (
     <section className="section">
-      <h2 className="text-xl font-semibold mb-4">Users</h2>
+      <div className="flex flex-row justify-between items-center mb-4">
+        <h2 className="text-xl font-semibold">Users</h2>
+        <Link href="/users/new">+ Create</Link>
+      </div>
       <ul className="flex flex-col gap-4">
         {users.map((user) => (
           <li key={user.id}>
