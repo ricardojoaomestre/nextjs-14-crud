@@ -3,20 +3,19 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex w-full bg-gray-300">
-      <nav className="bg-gray-300 center py-12">
-        <ul className="flex flex-row gap-3 text-lg capitalize font-semibold">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/posts">Posts</Link>
-          </li>
-          <li>
-            <Link href="/users">Users</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="navbar bg-base-100">
+      <Link className="btn btn-ghost normal-case text-xl" href="/">
+        Home
+      </Link>
+
+      <ul className="menu menu-horizontal px-1">
+        <li>
+          <Link href="/posts">Posts</Link>
+        </li>
+        <li>
+          <Link href="/users">Users</Link>
+        </li>
+      </ul>
     </div>
   );
 };
