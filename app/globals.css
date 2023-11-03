@@ -16,7 +16,7 @@
   }
 
   main {
-    @apply flex-1;
+    @apply container flex-1;
   }
 
   .section {
@@ -27,7 +27,7 @@
     @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .title {
-    @apply text-3xl font-semibold capitalize;
+  .page-title {
+    @apply text-3xl capitalize font-semibold mb-4;
   }
 }
