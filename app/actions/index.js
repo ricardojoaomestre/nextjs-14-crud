@@ -1,6 +1,6 @@
 "use server";
 
-import { createUser, deleteUser } from "@/lib/prisma/users";
+import { createUser, deleteUser, updateUser } from "@/lib/prisma/users";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -13,9 +13,27 @@ export async function createUserAction(prevState, formData) {
     };
     const { user } = await createUser(userData);
     revalidatePath("/users");
-    return { message: "User created with success", user };
+    return { status: "ok", message: "User created with success", user };
   } catch (error) {
-    return { message: "Failed to create user." };
+    return { status: "nok", message: "Failed to create user." };
+  }
+}
+
+export async function updateUserAction(prevState, formData) {
+  try {
+    const id = formData.get("id");
+    const userData = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      imageUrl: formData.get("imageUrl"),
+    };
+    const { user, error } = await updateUser(id, userData);
+    if (error) throw error;
+    revalidatePath("/users");
+    revalidatePath(`/users/${formData.get("id")}`);
+    return { status: "ok", message: "User created with success", user };
+  } catch (error) {
+    return { status: "nok", message: "Failed to create user." };
   }
 }
 

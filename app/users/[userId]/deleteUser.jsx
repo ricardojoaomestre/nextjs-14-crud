@@ -15,7 +15,7 @@ const DeleteUser = ({ id }) => {
       <button
         type="submit"
         onClick={handleDeleteUser}
-        className="btn btn-error"
+        className="btn btn-error btn-sm btn-outline"
         aria-disabled={pending}
         disabled={pending}
       >
