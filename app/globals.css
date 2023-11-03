@@ -20,7 +20,7 @@
   }
 
   .section {
-    @apply py-24 px-8;
+    @apply py-12 px-8;
   }
 
   .center {

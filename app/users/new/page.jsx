@@ -17,23 +17,51 @@ const CreateUser = () => {
 
   return (
     <div>
-      <h2 className="title">Create new user</h2>
+      <h2 className="page-title">Create new user</h2>
       <form action={formAction}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" required />
+        <div className="form-control sm:max-w-sm">
+          <label className="label" htmlFor="name">
+            <span className="label-text">Name</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered sm:max-w-sm"
+            name="name"
+            id="name"
+          />
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" required />
+
+        <div className="form-control sm:max-w-sm">
+          <label className="label" htmlFor="email">
+            <span className="label-text">Email</span>
+          </label>
+          <input
+            type="email"
+            className="input input-bordered sm:max-w-sm"
+            name="email"
+            id="email"
+          />
         </div>
-        <div>
-          <label htmlFor="imageUrl">Profile picture url</label>
-          <input type="text" id="imageUrl" name="imageUrl" />
+        <div className="form-control sm:max-w-sm">
+          <label className="label" htmlFor="imageUrl">
+            <span className="label-text">Profile picture url</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered sm:max-w-sm"
+            id="imageUrl"
+            name="imageUrl"
+          />
         </div>
-        <button type="submit" aria-disabled={pending}>
-          Save
-        </button>
+        <div className="form-control sm:max-w-sm my-6">
+          <button
+            className="btn btn-primary"
+            type="submit"
+            aria-disabled={pending}
+          >
+            Save
+          </button>
+        </div>
         <p aria-live="polite" className="sr-only">
           {state?.message}
         </p>

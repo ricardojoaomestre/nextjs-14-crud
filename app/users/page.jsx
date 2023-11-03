@@ -1,13 +1,17 @@
-import { getUsers } from "@/lib/prisma/users";
 import React from "react";
-import JsonDebug from "../components/JsonDebug";
+import UserList from "./userList";
 
 const UsersPage = async () => {
   return (
-    <div>
+    <>
       <h2 className="page-title">Users</h2>
-      <p>Select a user</p>
-    </div>
+      <div className="hidden sm:flex">
+        <p>Select a user</p>
+      </div>
+      <div className="flex sm:hidden">
+        <UserList />
+      </div>
+    </>
   );
 };
 

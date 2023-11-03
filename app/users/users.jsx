@@ -1,10 +1,7 @@
 import { getUsers } from "@/lib/prisma/users";
 import Link from "next/link";
-import React from "react";
-import Avatar from "../components/Avatar";
-
-const Users = async () => {
-  const { users } = await getUsers();
+import UserList from "./userList";
+const Users = () => {
   return (
     <section className="py-12 px-3">
       <div className="flex flex-row justify-between items-center px-3 mb-4">
@@ -13,16 +10,7 @@ const Users = async () => {
           Create
         </Link>
       </div>
-      <ul className="menu">
-        {users.map((user) => (
-          <li key={user.id} className="inline-flex overflow-clip">
-            <Link href={`/users/${user.id}`}>
-              <Avatar user={user} />
-              <span className="ml-2">{user.name || user.email}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <UserList />
     </section>
   );
 };
