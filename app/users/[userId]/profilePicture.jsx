@@ -2,6 +2,7 @@
 import React from "react";
 
 const ProfilePicture = ({ user }) => {
+  if (!user) return null;
   return (
     <div className="rounded-full bg-slate-200">
       {!user.name && (

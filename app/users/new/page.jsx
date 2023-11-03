@@ -1,5 +1,6 @@
 "use client";
 import { createUserAction } from "@/app/actions";
+import { useRouter } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
 
 const initialState = {
@@ -7,8 +8,12 @@ const initialState = {
 };
 
 const CreateUser = () => {
+  const router = useRouter();
   const { pending } = useFormStatus();
   const [state, formAction] = useFormState(createUserAction, initialState);
+
+  // if state has the newly created user redirect to that user profile page
+  if (state?.user) router.push(`/users/${state?.user.id}`);
 
   return (
     <div>

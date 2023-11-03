@@ -5,13 +5,14 @@ import { revalidatePath } from "next/cache";
 
 export async function createUserAction(prevState, formData) {
   try {
-    const user = {
+    const userData = {
       name: formData.get("name"),
       email: formData.get("email"),
       imageUrl: formData.get("imageUrl"),
     };
-    await createUser(user);
-    return revalidatePath("/users");
+    const { user } = await createUser(userData);
+    revalidatePath("/users");
+    return { message: "User created with success", user };
   } catch (error) {
     return { message: "Failed to create user." };
   }
