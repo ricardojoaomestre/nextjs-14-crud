@@ -1,7 +1,8 @@
 "use server";
 
-import { createUser } from "@/lib/prisma/users";
+import { createUser, deleteUser } from "@/lib/prisma/users";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function createUserAction(prevState, formData) {
   try {
@@ -16,4 +17,10 @@ export async function createUserAction(prevState, formData) {
   } catch (error) {
     return { message: "Failed to create user." };
   }
+}
+
+export async function deleteUserAction(id) {
+  await deleteUser(id);
+  revalidatePath("/users");
+  redirect("/users");
 }

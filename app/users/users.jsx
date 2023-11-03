@@ -1,4 +1,3 @@
-import { getUsers } from "@/lib/prisma/users";
 import Link from "next/link";
 import UserList from "./userList";
 const Users = () => {
