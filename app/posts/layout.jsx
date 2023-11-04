@@ -1,14 +1,15 @@
 import React from "react";
 import Posts from "./posts";
+import SideNav from "../components/SideNav";
 
 const PostsLayout = ({ children }) => {
   return (
-    <main className="flex">
-      <div className="h-full flex flex-col bg-slate-100 w-1/3 flex-shrink-0">
+    <div className="flex">
+      <SideNav>
         <Posts />
-      </div>
+      </SideNav>
       <section className="section">{children}</section>
-    </main>
+    </div>
   );
 };
 

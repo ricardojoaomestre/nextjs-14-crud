@@ -1,12 +1,13 @@
 import React from "react";
 import Users from "./users";
+import SideNav from "../components/SideNav";
 
 const UsersLayout = ({ children }) => {
   return (
     <div className="h-full flex">
-      <div className="h-full hidden sm:flex flex-col bg-slate-100 w-1/3 max-w-xs flex-shrink-0">
+      <SideNav>
         <Users />
-      </div>
+      </SideNav>
       <section className="section w-full">{children}</section>
     </div>
   );
