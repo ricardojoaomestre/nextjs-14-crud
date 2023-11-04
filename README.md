@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Summary
+
+Very simple app the performs the basic CRUD actions and accesses a public API using NextJS 14 and makes the most out of SSR and server actions.
+
+Is connected to a mongoDB database and uses prisma as ORM.
+
 ## Getting Started
 
 First, run the development server:
