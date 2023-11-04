@@ -7,7 +7,7 @@ const UserList = async () => {
   const { users } = await getUsers();
   return (
     <ul className="menu">
-      {users.map((user) => (
+      {users?.map((user) => (
         <li key={user.id} className="inline-flex overflow-clip">
           <Link href={`/users/${user.id}`}>
             <Avatar user={user} />
